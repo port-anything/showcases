@@ -1,0 +1,41 @@
+# Port Anything showcases
+
+Compatibility matrices produced with [port-anything](https://github.com/port-anything/port-anything): one reference implementation, several candidates, generated test cases, per-feature parity, clustered divergences with minimized repros.
+
+| Directory | Reference | Candidates | Cases |
+|---|---|---|---|
+| [`coreutils/`](coreutils/) | GNU coreutils 9.12 | uutils 0.12.0 and `main`, busybox 1.38.0, toybox 0.8.15 | 1000 generated per utility (`od`, `nl`, `comm`, `fmt`, `join`, `numfmt`) |
+| [`jq/`](jq/) | jq 1.8.2 | jaq 3.1.1, gojq 0.12.19 | 550 from jq's own `tests/jq.test` + 2920 token mutants |
+
+## Findings
+
+Every finding below was reproduced by hand outside the tool, then checked against the project's issue tracker before being counted as new.
+
+| Project | Finding | Status |
+|---|---|---|
+| uutils | `numfmt` rejects scientific notation in unselected fields | fixed upstream ([#15312](https://github.com/uutils/coreutils/issues/15312)) |
+| uutils | `od -B` rejected | fixed upstream ([#15313](https://github.com/uutils/coreutils/issues/15313)) |
+| uutils | `od -S` skips the "cannot skip past end of combined input" check | fixed upstream ([#15314](https://github.com/uutils/coreutils/issues/15314)) |
+| gojq | `abs` on non-numbers | fixed upstream (on `main`, unreleased) |
+| uutils | `numfmt` keeps a tab between fields; GNU prints a space | new |
+| uutils | `fmt -p`: an unprefixed last line without a newline gets one | new |
+| uutils | `od -w1K` accepted, `nl -l <huge>` rejected | new |
+| busybox | `od` with mixed type sizes prints the last block's zero padding as input | new |
+| toybox | `fmt` writes `\e[7m\e[27m` into its output for words with control bytes | new |
+| jaq | panic instead of a syntax error when a filter ends inside a comment | new |
+| jaq | stack-overflow abort on deeply nested values | new (related: jaq #454, #467) |
+| jaq | `from_entries` ignores `name`/`Name`/`Key`/`Value` | new |
+| gojq | `isnan` errors on non-numbers (jq returns `false`) | new (minor, may be intentional) |
+
+Already tracked upstream (not counted): see the per-directory READMEs.
+
+## Method and caveats
+
+- Linux aarch64 (Ubuntu 25.10 container), every case sandboxed with bubblewrap, no network, with a fixed environment: `LANG=C.UTF-8`, `TZ=UTC`, `SOURCE_DATE_EPOCH=946684800`, and only `PATH` from the host. Hand repros used `LC_ALL=C`. Not yet repeated on x86_64.
+- The reference is pinned: GNU coreutils built from the latest release, not the distro package (Ubuntu ships an older GNU, or uutils, which produced false positives in early runs).
+- Each directory is a normal port-anything project: `port-anything.yaml`, the committed corpus under `port-anything/recorded/`, `baseline.txt` and `run.txt` (CLI output), and the report (`port-anything-report.html` / `.json`). `versions.txt` records the exact versions, distro and kernel.
+- busybox and toybox are deliberately minimal. Their numbers measure GNU compatibility, not quality, and options they don't implement currently count as divergences.
+
+## Licenses
+
+Each directory carries its own license file, matching what its cases and reports contain.
