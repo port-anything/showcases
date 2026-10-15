@@ -36,7 +36,7 @@ tr.group th { background: var(--soft); font-weight: 600; }
 <body>
 <header>
 <h1>Port Anything report: join</h1>
-<p class="meta">run 20261015-131127-bc40 · 2026-10-15T13:11:27.691Z · 1000 cases · reference <code>/opt/gnu/bin/join</code></p>
+<p class="meta">run 20261015-160350-c62d · 2026-10-15T16:03:50.613Z · 1000 cases · reference <code>/opt/gnu/bin/join</code></p>
 </header>
 <main>
 <section id="headline">
@@ -45,17 +45,17 @@ tr.group th { background: var(--soft); font-weight: 600; }
 <div class="card">
 <p class="meta">candidate 1</p>
 <p><code>/opt/uu/coreutils join</code></p>
-<p class="parity high">97.3%</p><p>mean of 4 features · 963 of 1000 scored cases match (raw 96.3%)</p>
-<p>963 cases match · 37 diverge · 0 waived (not scored)</p>
-<p>by origin: generated 97.3% (1000 cases)</p>
+<p class="parity high">97.8%</p><p>mean of 4 features · 970 of 1000 scored cases match (raw 97.0%)</p>
+<p>970 cases match · 30 diverge · 0 waived (not scored)</p>
+<p>by origin: generated 97.8% (1000 cases)</p>
 <p>0 flaky-reference (not scored) · 0 flaky-candidate (diverge) · 0 timed out (diverge)</p>
 </div>
 <div class="card">
 <p class="meta">candidate 2</p>
 <p><code>/opt/uu-main/coreutils join</code></p>
-<p class="parity high">98.2%</p><p>mean of 4 features · 971 of 1000 scored cases match (raw 97.1%)</p>
-<p>971 cases match · 29 diverge · 0 waived (not scored)</p>
-<p>by origin: generated 98.2% (1000 cases)</p>
+<p class="parity high">98.6%</p><p>mean of 4 features · 976 of 1000 scored cases match (raw 97.6%)</p>
+<p>976 cases match · 24 diverge · 0 waived (not scored)</p>
+<p>by origin: generated 98.6% (1000 cases)</p>
 <p>0 flaky-reference (not scored) · 0 flaky-candidate (diverge) · 0 timed out (diverge)</p>
 </div>
 </div>
@@ -66,12 +66,12 @@ tr.group th { background: var(--soft); font-weight: 600; }
 <table>
 <thead><tr><th scope="col">feature</th><th scope="col">candidate 1<br><code>/opt/uu/coreutils join</code></th><th scope="col">candidate 2<br><code>/opt/uu-main/coreutils join</code></th></tr></thead>
 <tbody>
-<tr><th scope="row">headline (mean)</th><td class="num high"><strong>97.3%</strong></td><td class="num high"><strong>98.2%</strong></td></tr>
+<tr><th scope="row">headline (mean)</th><td class="num high"><strong>97.8%</strong></td><td class="num high"><strong>98.6%</strong></td></tr>
 <tr class="group"><th colspan="3" scope="rowgroup">In the headline</th></tr>
-<tr><th scope="row"><code>base</code></th><td class="num high">95.7% <span class="note">(336/351)</span></td><td class="num high">97.1% <span class="note">(341/351)</span></td></tr>
+<tr><th scope="row"><code>base</code></th><td class="num high">96.2% <span class="note">(337/350)</span></td><td class="num high">97.1% <span class="note">(340/350)</span></td></tr>
 <tr><th scope="row"><code>opt.e</code></th><td class="num full">100.0% <span class="note">(25/25)</span></td><td class="num full">100.0% <span class="note">(25/25)</span></td></tr>
-<tr><th scope="row"><code>opt.t</code></th><td class="num high">96.7% <span class="note">(118/122)</span></td><td class="num high">99.1% <span class="note">(121/122)</span></td></tr>
-<tr><th scope="row"><code>opt.zero-terminated</code></th><td class="num high">96.7% <span class="note">(477/493)</span></td><td class="num high">96.7% <span class="note">(477/493)</span></td></tr>
+<tr><th scope="row"><code>opt.t</code></th><td class="num high">97.5% <span class="note">(117/120)</span></td><td class="num full">100.0% <span class="note">(120/120)</span></td></tr>
+<tr><th scope="row"><code>opt.zero-terminated</code></th><td class="num high">97.5% <span class="note">(484/496)</span></td><td class="num high">97.5% <span class="note">(484/496)</span></td></tr>
 <tr class="group"><th colspan="3" scope="rowgroup">Under-sampled (not in the headline)</th></tr>
 <tr><th scope="row"><code>opt.ignore-case</code></th><td class="num out">100.0% <span class="note">(4/4)</span></td><td class="num out">100.0% <span class="note">(4/4)</span></td></tr>
 <tr><th scope="row"><code>opt.nocheck-order</code></th><td class="num out">100.0% <span class="note">(3/3)</span></td><td class="num out">100.0% <span class="note">(3/3)</span></td></tr>
@@ -105,7 +105,7 @@ tr.group th { background: var(--soft); font-weight: 600; }
 <section id="clusters">
 <h2>Clusters</h2>
 <p class="note">Diverging cases grouped by what differs, heaviest first: a cluster's weight is how much of the per-feature headline it holds down. The repro is the cluster's smallest case.</p>
-<h3>candidate 1 <code>/opt/uu/coreutils join</code>: 4 clusters</h3>
+<h3>candidate 1 <code>/opt/uu/coreutils join</code>: 3 clusters</h3>
 <div class="cluster" id="cluster-1">
 <h3>cluster 1: 2 cases · stdout other</h3>
 <p>features opt.help (1), opt.version (1)</p>
@@ -137,8 +137,8 @@ c
 <p class="note">cases: <code>c_079583c7</code> <code>c_0dcc83b4</code> <code>c_13d21e95</code> <code>c_18e1b081</code> <code>c_2242d42a</code> <code>c_37f0cdc4</code> <code>c_5559856c</code> <code>c_558ec67b</code> <code>c_65d77628</code> <code>c_72d0ae16</code> <code>c_92c5e7b6</code> <code>c_948cfea3</code> <code>c_c2576584</code> <code>c_c28d373a</code> <code>c_d1b39a76</code> <code>c_d6341a34</code> <code>c_df311013</code> <code>c_edfe0352</code> <code>c_f8db98e3</code> <code>c_f997ec00</code></p>
 </div>
 <div class="cluster" id="cluster-3">
-<h3>cluster 3: 10 cases · stderr message-text</h3>
-<p>features base (7), opt.t (3)</p>
+<h3>cluster 3: 8 cases · stderr message-text</h3>
+<p>features base (5), opt.t (3)</p>
 <p>repro: case <code>c_21d5a1e1</code></p>
 <pre>$ join</pre>
 <p class="note">stdin (11 bytes):</p>
@@ -148,26 +148,11 @@ c
 10
 1
 </pre>
-<p class="note">cases: <code>c_08c2b584</code> <code>c_0aeda59c</code> <code>c_19da564a</code> <code>c_1dc907ff</code> <code>c_1ff9140b</code> <code>c_21d5a1e1</code> <code>c_39ef6269</code> <code>c_53da8b1c</code> <code>c_6acc9cae</code> <code>c_8edd66c4</code></p>
+<p class="note">cases: <code>c_08c2b584</code> <code>c_19da564a</code> <code>c_1dc907ff</code> <code>c_1ff9140b</code> <code>c_21d5a1e1</code> <code>c_39ef6269</code> <code>c_53da8b1c</code> <code>c_8edd66c4</code></p>
 </div>
+<h3>candidate 2 <code>/opt/uu-main/coreutils join</code>: 3 clusters</h3>
 <div class="cluster" id="cluster-4">
-<h3>cluster 4: 5 cases · exit timeout vs 0, stdout empty (reference empty)</h3>
-<p>features opt.zero-terminated (4), opt.t (1)</p>
-<p>repro: case <code>c_760779d9</code></p>
-<pre>$ join --zero-terminated input.txt input.txt</pre>
-<p class="note">stdin (35 bytes):</p>
-<pre>hello world
-foo bar baz
-
-last line
-</pre>
-<p class="note">file <code>input.txt</code> (2 bytes):</p>
-<pre>n:</pre>
-<p class="note">cases: <code>c_760779d9</code> <code>c_760fb103</code> <code>c_765a5e14</code> <code>c_766f46e1</code> <code>c_76897745</code></p>
-</div>
-<h3>candidate 2 <code>/opt/uu-main/coreutils join</code>: 4 clusters</h3>
-<div class="cluster" id="cluster-5">
-<h3>cluster 5: 2 cases · stdout other</h3>
+<h3>cluster 4: 2 cases · stdout other</h3>
 <p>features opt.help (1), opt.version (1)</p>
 <p>repro: case <code>c_46c5cc24</code></p>
 <pre>$ join --version data.txt data.txt</pre>
@@ -185,8 +170,8 @@ c
 </pre>
 <p class="note">cases: <code>c_3f658673</code> <code>c_46c5cc24</code></p>
 </div>
-<div class="cluster" id="cluster-6">
-<h3>cluster 6: 20 cases · stdout whitespace-only</h3>
+<div class="cluster" id="cluster-5">
+<h3>cluster 5: 20 cases · stdout whitespace-only</h3>
 <p>features opt.zero-terminated (12), base (8)</p>
 <p>repro: case <code>c_2242d42a</code></p>
 <pre>$ join data.txt data.txt</pre>
@@ -196,23 +181,8 @@ c
 <p class="note">(binary, not shown)</p>
 <p class="note">cases: <code>c_079583c7</code> <code>c_0dcc83b4</code> <code>c_13d21e95</code> <code>c_18e1b081</code> <code>c_2242d42a</code> <code>c_37f0cdc4</code> <code>c_5559856c</code> <code>c_558ec67b</code> <code>c_65d77628</code> <code>c_72d0ae16</code> <code>c_92c5e7b6</code> <code>c_948cfea3</code> <code>c_c2576584</code> <code>c_c28d373a</code> <code>c_d1b39a76</code> <code>c_d6341a34</code> <code>c_df311013</code> <code>c_edfe0352</code> <code>c_f8db98e3</code> <code>c_f997ec00</code></p>
 </div>
-<div class="cluster" id="cluster-7">
-<h3>cluster 7: 5 cases · exit timeout vs 0, stdout empty (reference empty)</h3>
-<p>features opt.zero-terminated (4), opt.t (1)</p>
-<p>repro: case <code>c_760779d9</code></p>
-<pre>$ join --zero-terminated input.txt input.txt</pre>
-<p class="note">stdin (35 bytes):</p>
-<pre>hello world
-foo bar baz
-
-last line
-</pre>
-<p class="note">file <code>input.txt</code> (2 bytes):</p>
-<pre>n:</pre>
-<p class="note">cases: <code>c_760779d9</code> <code>c_760fb103</code> <code>c_765a5e14</code> <code>c_766f46e1</code> <code>c_76897745</code></p>
-</div>
-<div class="cluster" id="cluster-8">
-<h3>cluster 8: 2 cases · stderr message-text</h3>
+<div class="cluster" id="cluster-6">
+<h3>cluster 6: 2 cases · stderr message-text</h3>
 <p>features base (2)</p>
 <p>repro: case <code>c_1dc907ff</code></p>
 <pre>$ join -Q input.txt data.txt</pre>
@@ -233,7 +203,7 @@ last line
 <section id="integrity">
 <h2>Integrity</h2>
 <ul>
-<li>sandbox: bwrap, no network (processes not isolated)</li>
+<li>sandbox: bwrap, no network</li>
 <li>program name (argv[0], both sides): <code>join</code></li>
 <li>compared under: standard (stderr loose, similarity 0.6)</li>
 <li>manifest verification: not run by this version</li>

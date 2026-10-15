@@ -4,9 +4,9 @@
  "seed": 42,
  "cases": 1000,
  "stats": {
-  "observed": 3286,
+  "observed": 3292,
   "dropped": {
-   "duplicate": 2003,
+   "duplicate": 2009,
    "errorCap": 283,
    "budget": 0
   },

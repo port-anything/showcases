@@ -36,7 +36,7 @@ tr.group th { background: var(--soft); font-weight: 600; }
 <body>
 <header>
 <h1>Port Anything report: numfmt</h1>
-<p class="meta">run 20261015-125555-1a54 · 2026-10-15T12:55:55.465Z · 922 cases · reference <code>/opt/gnu/bin/numfmt</code></p>
+<p class="meta">run 20261015-160607-af90 · 2026-10-15T16:06:07.533Z · 922 cases · reference <code>/opt/gnu/bin/numfmt</code></p>
 </header>
 <main>
 <section id="headline">
@@ -45,18 +45,18 @@ tr.group th { background: var(--soft); font-weight: 600; }
 <div class="card">
 <p class="meta">candidate 1</p>
 <p><code>/opt/uu/coreutils numfmt</code></p>
-<p class="parity high">99.7%</p><p>mean of 3 features · 908 of 922 scored cases match (raw 98.4%)</p>
-<p>908 cases match · 14 diverge · 0 waived (not scored)</p>
-<p>by origin: generated 99.7% (922 cases)</p>
-<p>0 flaky-reference (not scored) · 2 flaky-candidate (diverge) · 2 timed out (diverge)</p>
+<p class="parity high">99.9%</p><p>mean of 3 features · 912 of 922 scored cases match (raw 98.9%)</p>
+<p>912 cases match · 10 diverge · 0 waived (not scored)</p>
+<p>by origin: generated 99.9% (922 cases)</p>
+<p>0 flaky-reference (not scored) · 0 flaky-candidate (diverge) · 0 timed out (diverge)</p>
 </div>
 <div class="card">
 <p class="meta">candidate 2</p>
 <p><code>/opt/uu-main/coreutils numfmt</code></p>
-<p class="parity high">99.8%</p><p>mean of 3 features · 909 of 922 scored cases match (raw 98.5%)</p>
-<p>909 cases match · 13 diverge · 0 waived (not scored)</p>
-<p>by origin: generated 99.8% (922 cases)</p>
-<p>0 flaky-reference (not scored) · 1 flaky-candidate (diverge) · 1 timed out (diverge)</p>
+<p class="parity high">99.9%</p><p>mean of 3 features · 912 of 922 scored cases match (raw 98.9%)</p>
+<p>912 cases match · 10 diverge · 0 waived (not scored)</p>
+<p>by origin: generated 99.9% (922 cases)</p>
+<p>0 flaky-reference (not scored) · 0 flaky-candidate (diverge) · 0 timed out (diverge)</p>
 </div>
 </div>
 </section>
@@ -66,10 +66,10 @@ tr.group th { background: var(--soft); font-weight: 600; }
 <table>
 <thead><tr><th scope="col">feature</th><th scope="col">candidate 1<br><code>/opt/uu/coreutils numfmt</code></th><th scope="col">candidate 2<br><code>/opt/uu-main/coreutils numfmt</code></th></tr></thead>
 <tbody>
-<tr><th scope="row">headline (mean)</th><td class="num high"><strong>99.7%</strong></td><td class="num high"><strong>99.8%</strong></td></tr>
+<tr><th scope="row">headline (mean)</th><td class="num high"><strong>99.9%</strong></td><td class="num high"><strong>99.9%</strong></td></tr>
 <tr class="group"><th colspan="3" scope="rowgroup">In the headline</th></tr>
 <tr><th scope="row"><code>opt.from-unit</code></th><td class="num full">100.0% <span class="note">(40/40)</span></td><td class="num full">100.0% <span class="note">(40/40)</span></td></tr>
-<tr><th scope="row"><code>opt.invalid</code></th><td class="num high">99.3% <span class="note">(799/804)</span></td><td class="num high">99.5% <span class="note">(800/804)</span></td></tr>
+<tr><th scope="row"><code>opt.invalid</code></th><td class="num high">99.8% <span class="note">(803/804)</span></td><td class="num high">99.8% <span class="note">(803/804)</span></td></tr>
 <tr><th scope="row"><code>opt.suffix</code></th><td class="num full">100.0% <span class="note">(22/22)</span></td><td class="num full">100.0% <span class="note">(22/22)</span></td></tr>
 <tr class="group"><th colspan="3" scope="rowgroup">Under-sampled (not in the headline)</th></tr>
 <tr><th scope="row"><code>base</code></th><td class="num out">66.6% <span class="note">(4/6)</span></td><td class="num out">66.6% <span class="note">(4/6)</span></td></tr>
@@ -111,7 +111,7 @@ tr.group th { background: var(--soft); font-weight: 600; }
 <section id="clusters">
 <h2>Clusters</h2>
 <p class="note">Diverging cases grouped by what differs, heaviest first: a cluster's weight is how much of the per-feature headline it holds down. The repro is the cluster's smallest case.</p>
-<h3>candidate 1 <code>/opt/uu/coreutils numfmt</code>: 6 clusters</h3>
+<h3>candidate 1 <code>/opt/uu/coreutils numfmt</code>: 4 clusters</h3>
 <div class="cluster" id="cluster-1">
 <h3>cluster 1: 2 cases · stdout other</h3>
 <p>features opt.help (1), opt.version (1)</p>
@@ -140,31 +140,7 @@ tr.group th { background: var(--soft); font-weight: 600; }
 <p class="note">cases: <code>c_118c23bd</code> <code>c_3d8388bf</code> <code>c_91bb79a7</code> <code>c_9c474fe7</code></p>
 </div>
 <div class="cluster" id="cluster-4">
-<h3>cluster 4: 1 case · exit timeout vs 2, stderr empty (reference empty)</h3>
-<p>features opt.invalid (1)</p>
-<p>repro: case <code>c_ceb015a7</code></p>
-<pre>$ numfmt --invalid=abort</pre>
-<p class="note">stdin (26 bytes):</p>
-<pre>  leating	ta{b
-mixed CASE
-</pre>
-<p class="note">cases: <code>c_ceb015a7</code></p>
-</div>
-<div class="cluster" id="cluster-5">
-<h3>cluster 5: 1 case · exit timeout vs 0, stdout empty (reference empty), stderr empty (reference empty)</h3>
-<p>features opt.invalid (1)</p>
-<p>repro: case <code>c_cea8abca</code></p>
-<pre>$ numfmt --invalid warn</pre>
-<p class="note">stdin (34 bytes):</p>
-<pre>hello world
-foo bar ba
-
-last line
-</pre>
-<p class="note">cases: <code>c_cea8abca</code></p>
-</div>
-<div class="cluster" id="cluster-6">
-<h3>cluster 6: 1 case · stdout whitespace-only</h3>
+<h3>cluster 4: 1 case · stdout whitespace-only</h3>
 <p>features opt.invalid (1)</p>
 <p>repro: case <code>c_3204fd1d</code></p>
 <pre>$ numfmt --invalid warn</pre>
@@ -176,9 +152,9 @@ last line
 </pre>
 <p class="note">cases: <code>c_3204fd1d</code></p>
 </div>
-<h3>candidate 2 <code>/opt/uu-main/coreutils numfmt</code>: 6 clusters</h3>
-<div class="cluster" id="cluster-7">
-<h3>cluster 7: 2 cases · stdout other</h3>
+<h3>candidate 2 <code>/opt/uu-main/coreutils numfmt</code>: 4 clusters</h3>
+<div class="cluster" id="cluster-5">
+<h3>cluster 5: 2 cases · stdout other</h3>
 <p>features opt.help (1), opt.version (1)</p>
 <p>repro: case <code>c_ec799521</code></p>
 <pre>$ numfmt --help</pre>
@@ -186,8 +162,8 @@ last line
 <pre></pre>
 <p class="note">cases: <code>c_ac241af8</code> <code>c_ec799521</code></p>
 </div>
-<div class="cluster" id="cluster-8">
-<h3>cluster 8: 3 cases · exit 0 vs 1, stdout empty (candidate empty), stderr empty (reference empty)</h3>
+<div class="cluster" id="cluster-6">
+<h3>cluster 6: 3 cases · exit 0 vs 1, stdout empty (candidate empty), stderr empty (reference empty)</h3>
 <p>features opt.from (3)</p>
 <p>repro: case <code>c_8a033366</code></p>
 <pre>$ numfmt --from=a 10 10</pre>
@@ -195,8 +171,8 @@ last line
 <pre>ü</pre>
 <p class="note">cases: <code>c_388089fc</code> <code>c_8a033366</code> <code>c_ffa4e56f</code></p>
 </div>
-<div class="cluster" id="cluster-9">
-<h3>cluster 9: 4 cases · stderr message-text</h3>
+<div class="cluster" id="cluster-7">
+<h3>cluster 7: 4 cases · stderr message-text</h3>
 <p>features base (2), opt.from (1), opt.unit-separator (1)</p>
 <p>repro: case <code>c_91bb79a7</code></p>
 <pre>$ numfmt --unit-separator</pre>
@@ -204,32 +180,8 @@ last line
 <pre></pre>
 <p class="note">cases: <code>c_118c23bd</code> <code>c_3d8388bf</code> <code>c_91bb79a7</code> <code>c_9c474fe7</code></p>
 </div>
-<div class="cluster" id="cluster-10">
-<h3>cluster 10: 1 case · exit timeout vs 2, stderr empty (reference empty)</h3>
-<p>features opt.invalid (1)</p>
-<p>repro: case <code>c_ceb015a7</code></p>
-<pre>$ numfmt --invalid=abort</pre>
-<p class="note">stdin (26 bytes):</p>
-<pre>  leating	ta{b
-mixed CASE
-</pre>
-<p class="note">cases: <code>c_ceb015a7</code></p>
-</div>
-<div class="cluster" id="cluster-11">
-<h3>cluster 11: 1 case · exit timeout vs 0, stdout empty (reference empty), stderr empty (reference empty)</h3>
-<p>features opt.invalid (1)</p>
-<p>repro: case <code>c_cea8abca</code></p>
-<pre>$ numfmt --invalid warn</pre>
-<p class="note">stdin (34 bytes):</p>
-<pre>hello world
-foo bar ba
-
-last line
-</pre>
-<p class="note">cases: <code>c_cea8abca</code></p>
-</div>
-<div class="cluster" id="cluster-12">
-<h3>cluster 12: 1 case · stdout whitespace-only</h3>
+<div class="cluster" id="cluster-8">
+<h3>cluster 8: 1 case · stdout whitespace-only</h3>
 <p>features opt.invalid (1)</p>
 <p>repro: case <code>c_3204fd1d</code></p>
 <pre>$ numfmt --invalid warn</pre>

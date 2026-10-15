@@ -1,11 +1,10 @@
 Ran 922 cases as "numfmt", sandbox: bwrap, no network
-run 20261015-125555-1a54
+run 20261015-160607-af90
 reference /opt/gnu/bin/numfmt
 compare standard (stderr loose, similarity 0.6)
 normalizers: none
-candidate 1 /opt/uu/coreutils numfmt: 908 of 922 cases match, 14 diverge (2 flaky-candidate)
-  parity 99.7%, mean of 3 features (908 of 922 scored cases match)
-  2 flaky-candidate (diverge) · 2 timed out (diverge)
+candidate 1 /opt/uu/coreutils numfmt: 912 of 922 cases match, 10 diverge
+  parity 99.9%, mean of 3 features (912 of 922 scored cases match)
   under-sampled, not in the parity: base 66.6% (6 cases), opt.delimiter 100.0% (12 cases), opt.from 0.0% (4 cases), opt.header 100.0% (4 cases), opt.padding 100.0% (5 cases), opt.round 100.0% (8 cases), opt.to-unit 100.0% (4 cases), opt.unit-separator 87.5% (8 cases), opt.zero-terminated 100.0% (3 cases)
   self-description, not in the parity: opt.help 0.0% (1 case), opt.version 0.0% (1 case)
   cluster 1: 2 cases · stdout other · features opt.help (1), opt.version (1)
@@ -14,32 +13,18 @@ candidate 1 /opt/uu/coreutils numfmt: 908 of 922 cases match, 14 diverge (2 flak
     c_388089fc  c_8a033366  c_ffa4e56f
   cluster 3: 4 cases · stderr message-text · features base (2), opt.from (1), opt.unit-separator (1)
     c_118c23bd  c_3d8388bf  c_91bb79a7  c_9c474fe7
-  cluster 4: 1 case · exit timeout vs 2, stderr empty (reference empty) · features opt.invalid (1)
-    c_ceb015a7
-  cluster 5: 1 case · exit timeout vs 0, stdout empty (reference empty), stderr empty (reference empty) · features opt.invalid (1)
-    c_cea8abca
-  cluster 6: 1 case · stdout whitespace-only · features opt.invalid (1)
+  cluster 4: 1 case · stdout whitespace-only · features opt.invalid (1)
     c_3204fd1d
-  flaky-candidate, a re-run gave a different result:
-    c_ce102a0b  exit, signal, timeout, stdout, stderr
-    c_ce72622a  exit, signal, timeout, stdout, stderr
-candidate 2 /opt/uu-main/coreutils numfmt: 909 of 922 cases match, 13 diverge (1 flaky-candidate)
-  parity 99.8%, mean of 3 features (909 of 922 scored cases match)
-  1 flaky-candidate (diverge) · 1 timed out (diverge)
+candidate 2 /opt/uu-main/coreutils numfmt: 912 of 922 cases match, 10 diverge
+  parity 99.9%, mean of 3 features (912 of 922 scored cases match)
   under-sampled, not in the parity: base 66.6% (6 cases), opt.delimiter 100.0% (12 cases), opt.from 0.0% (4 cases), opt.header 100.0% (4 cases), opt.padding 100.0% (5 cases), opt.round 100.0% (8 cases), opt.to-unit 100.0% (4 cases), opt.unit-separator 87.5% (8 cases), opt.zero-terminated 100.0% (3 cases)
   self-description, not in the parity: opt.help 0.0% (1 case), opt.version 0.0% (1 case)
-  cluster 7: 2 cases · stdout other · features opt.help (1), opt.version (1)
+  cluster 5: 2 cases · stdout other · features opt.help (1), opt.version (1)
     c_ac241af8  c_ec799521
-  cluster 8: 3 cases · exit 0 vs 1, stdout empty (candidate empty), stderr empty (reference empty) · features opt.from (3)
+  cluster 6: 3 cases · exit 0 vs 1, stdout empty (candidate empty), stderr empty (reference empty) · features opt.from (3)
     c_388089fc  c_8a033366  c_ffa4e56f
-  cluster 9: 4 cases · stderr message-text · features base (2), opt.from (1), opt.unit-separator (1)
+  cluster 7: 4 cases · stderr message-text · features base (2), opt.from (1), opt.unit-separator (1)
     c_118c23bd  c_3d8388bf  c_91bb79a7  c_9c474fe7
-  cluster 10: 1 case · exit timeout vs 2, stderr empty (reference empty) · features opt.invalid (1)
-    c_ceb015a7
-  cluster 11: 1 case · exit timeout vs 0, stdout empty (reference empty), stderr empty (reference empty) · features opt.invalid (1)
-    c_cea8abca
-  cluster 12: 1 case · stdout whitespace-only · features opt.invalid (1)
+  cluster 8: 1 case · stdout whitespace-only · features opt.invalid (1)
     c_3204fd1d
-  flaky-candidate, a re-run gave a different result:
-    c_cdd47d4b  exit, signal, timeout, stdout, stderr
 run exit 1

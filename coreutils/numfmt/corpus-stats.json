@@ -6,8 +6,8 @@
  "stats": {
   "observed": 4023,
   "dropped": {
-   "duplicate": 2604,
-   "errorCap": 497,
+   "duplicate": 2606,
+   "errorCap": 495,
    "budget": 0
   },
   "stop": "exhausted",

@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "run_id": "20261015-125555-1a54",
-  "created": "2026-10-15T12:55:55.465Z",
+  "run_id": "20261015-160607-af90",
+  "created": "2026-10-15T16:06:07.533Z",
   "program_name": "numfmt",
   "reference": "/opt/gnu/bin/numfmt",
   "sandbox": "bwrap, no network",
@@ -20,8 +20,8 @@
     {
       "candidate": 1,
       "command": "/opt/uu/coreutils numfmt",
-      "headline": 0.997927031509121,
-      "badge": "parity 99.7% · 3 features · 922 cases",
+      "headline": 0.9995854063018242,
+      "badge": "parity 99.9% · 3 features · 922 cases",
       "headline_features": [
         "opt.from-unit",
         "opt.invalid",
@@ -30,13 +30,13 @@
       "raw": {
         "cases": 922,
         "scored": 922,
-        "match": 908,
-        "diverge": 14,
+        "match": 912,
+        "diverge": 10,
         "waived": 0,
         "flaky_reference": 0,
-        "flaky_candidate": 2,
-        "timeouts": 2,
-        "parity": 0.9848156182212582
+        "flaky_candidate": 0,
+        "timeouts": 0,
+        "parity": 0.9891540130151844
       },
       "origins": {
         "recorded": {
@@ -56,9 +56,9 @@
         "generated": {
           "cases": 922,
           "scored": 922,
-          "match": 908,
+          "match": 912,
           "features": 3,
-          "parity": 0.997927031509121
+          "parity": 0.9995854063018242
         }
       },
       "features": [
@@ -154,15 +154,15 @@
         },
         {
           "feature": "opt.invalid",
-          "parity": 0.9937810945273632,
+          "parity": 0.9987562189054726,
           "cases": 804,
           "scored": 804,
-          "match": 799,
-          "diverge": 5,
+          "match": 803,
+          "diverge": 1,
           "waived": 0,
           "flaky_reference": 0,
-          "flaky_candidate": 2,
-          "timeouts": 2,
+          "flaky_candidate": 0,
+          "timeouts": 0,
           "self_description": false,
           "under_sampled": false,
           "in_headline": true
@@ -294,8 +294,8 @@
     {
       "candidate": 2,
       "command": "/opt/uu-main/coreutils numfmt",
-      "headline": 0.9983416252072969,
-      "badge": "parity 99.8% · 3 features · 922 cases",
+      "headline": 0.9995854063018242,
+      "badge": "parity 99.9% · 3 features · 922 cases",
       "headline_features": [
         "opt.from-unit",
         "opt.invalid",
@@ -304,13 +304,13 @@
       "raw": {
         "cases": 922,
         "scored": 922,
-        "match": 909,
-        "diverge": 13,
+        "match": 912,
+        "diverge": 10,
         "waived": 0,
         "flaky_reference": 0,
-        "flaky_candidate": 1,
-        "timeouts": 1,
-        "parity": 0.9859002169197397
+        "flaky_candidate": 0,
+        "timeouts": 0,
+        "parity": 0.9891540130151844
       },
       "origins": {
         "recorded": {
@@ -330,9 +330,9 @@
         "generated": {
           "cases": 922,
           "scored": 922,
-          "match": 909,
+          "match": 912,
           "features": 3,
-          "parity": 0.9983416252072969
+          "parity": 0.9995854063018242
         }
       },
       "features": [
@@ -428,15 +428,15 @@
         },
         {
           "feature": "opt.invalid",
-          "parity": 0.9950248756218906,
+          "parity": 0.9987562189054726,
           "cases": 804,
           "scored": 804,
-          "match": 800,
-          "diverge": 4,
+          "match": 803,
+          "diverge": 1,
           "waived": 0,
           "flaky_reference": 0,
-          "flaky_candidate": 1,
-          "timeouts": 1,
+          "flaky_candidate": 0,
+          "timeouts": 0,
           "self_description": false,
           "under_sampled": false,
           "in_headline": true
@@ -679,82 +679,6 @@
     {
       "cluster": 4,
       "candidate": 1,
-      "description": "exit timeout vs 2, stderr empty (reference empty)",
-      "fields": [
-        "exit",
-        "signal",
-        "timeout",
-        "stderr"
-      ],
-      "shapes": [
-        {
-          "field": "exit",
-          "shape": "exit-code",
-          "detail": "timeout vs 2"
-        },
-        {
-          "field": "stderr",
-          "shape": "empty",
-          "detail": "reference empty"
-        }
-      ],
-      "features": [
-        {
-          "feature": "opt.invalid",
-          "cases": 1
-        }
-      ],
-      "size": 1,
-      "weight": 0.0012437810945273632,
-      "cases": [
-        "sha256:ceb015a7d82ad51e4121a7fd8c7ac7b3ac69943fbf4d926285064afa9e3b25ab"
-      ],
-      "repro": "sha256:ceb015a7d82ad51e4121a7fd8c7ac7b3ac69943fbf4d926285064afa9e3b25ab"
-    },
-    {
-      "cluster": 5,
-      "candidate": 1,
-      "description": "exit timeout vs 0, stdout empty (reference empty), stderr empty (reference empty)",
-      "fields": [
-        "exit",
-        "signal",
-        "timeout",
-        "stdout",
-        "stderr"
-      ],
-      "shapes": [
-        {
-          "field": "exit",
-          "shape": "exit-code",
-          "detail": "timeout vs 0"
-        },
-        {
-          "field": "stdout",
-          "shape": "empty",
-          "detail": "reference empty"
-        },
-        {
-          "field": "stderr",
-          "shape": "empty",
-          "detail": "reference empty"
-        }
-      ],
-      "features": [
-        {
-          "feature": "opt.invalid",
-          "cases": 1
-        }
-      ],
-      "size": 1,
-      "weight": 0.0012437810945273632,
-      "cases": [
-        "sha256:cea8abca129d949a51f00bb60df46a35edf1d56b039847cd0f1ebcbec8d6d094"
-      ],
-      "repro": "sha256:cea8abca129d949a51f00bb60df46a35edf1d56b039847cd0f1ebcbec8d6d094"
-    },
-    {
-      "cluster": 6,
-      "candidate": 1,
       "description": "stdout whitespace-only",
       "fields": [
         "stdout"
@@ -779,7 +703,7 @@
       "repro": "sha256:3204fd1d171a216e3c54c16008f3a720ca11030849058334e515118bdf572081"
     },
     {
-      "cluster": 7,
+      "cluster": 5,
       "candidate": 2,
       "description": "stdout other",
       "fields": [
@@ -810,7 +734,7 @@
       "repro": "sha256:ec799521709b6d6b8adbd97e087042c73c84e73f1101c91262a9c83d15d153ea"
     },
     {
-      "cluster": 8,
+      "cluster": 6,
       "candidate": 2,
       "description": "exit 0 vs 1, stdout empty (candidate empty), stderr empty (reference empty)",
       "fields": [
@@ -851,7 +775,7 @@
       "repro": "sha256:8a0333662487aa0eae984698a45ae92869ef27a8bb0612af62e61093e0ee8e89"
     },
     {
-      "cluster": 9,
+      "cluster": 7,
       "candidate": 2,
       "description": "stderr message-text",
       "fields": [
@@ -888,83 +812,7 @@
       "repro": "sha256:91bb79a7e16532d30481acc4959f4dc98814a18c3c39e673b0d0f5092d945aeb"
     },
     {
-      "cluster": 10,
-      "candidate": 2,
-      "description": "exit timeout vs 2, stderr empty (reference empty)",
-      "fields": [
-        "exit",
-        "signal",
-        "timeout",
-        "stderr"
-      ],
-      "shapes": [
-        {
-          "field": "exit",
-          "shape": "exit-code",
-          "detail": "timeout vs 2"
-        },
-        {
-          "field": "stderr",
-          "shape": "empty",
-          "detail": "reference empty"
-        }
-      ],
-      "features": [
-        {
-          "feature": "opt.invalid",
-          "cases": 1
-        }
-      ],
-      "size": 1,
-      "weight": 0.0012437810945273632,
-      "cases": [
-        "sha256:ceb015a7d82ad51e4121a7fd8c7ac7b3ac69943fbf4d926285064afa9e3b25ab"
-      ],
-      "repro": "sha256:ceb015a7d82ad51e4121a7fd8c7ac7b3ac69943fbf4d926285064afa9e3b25ab"
-    },
-    {
-      "cluster": 11,
-      "candidate": 2,
-      "description": "exit timeout vs 0, stdout empty (reference empty), stderr empty (reference empty)",
-      "fields": [
-        "exit",
-        "signal",
-        "timeout",
-        "stdout",
-        "stderr"
-      ],
-      "shapes": [
-        {
-          "field": "exit",
-          "shape": "exit-code",
-          "detail": "timeout vs 0"
-        },
-        {
-          "field": "stdout",
-          "shape": "empty",
-          "detail": "reference empty"
-        },
-        {
-          "field": "stderr",
-          "shape": "empty",
-          "detail": "reference empty"
-        }
-      ],
-      "features": [
-        {
-          "feature": "opt.invalid",
-          "cases": 1
-        }
-      ],
-      "size": 1,
-      "weight": 0.0012437810945273632,
-      "cases": [
-        "sha256:cea8abca129d949a51f00bb60df46a35edf1d56b039847cd0f1ebcbec8d6d094"
-      ],
-      "repro": "sha256:cea8abca129d949a51f00bb60df46a35edf1d56b039847cd0f1ebcbec8d6d094"
-    },
-    {
-      "cluster": 12,
+      "cluster": 8,
       "candidate": 2,
       "description": "stdout whitespace-only",
       "fields": [

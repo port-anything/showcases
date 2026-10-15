@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "run_id": "20261015-130312-3c13",
-  "created": "2026-10-15T13:03:12.374Z",
+  "run_id": "20261015-160148-0c54",
+  "created": "2026-10-15T16:01:48.315Z",
   "program_name": "fmt",
   "reference": "/opt/gnu/bin/fmt",
   "sandbox": "bwrap, no network",
@@ -20,8 +20,8 @@
     {
       "candidate": 1,
       "command": "/opt/uu/coreutils fmt",
-      "headline": 0.8803697027147697,
-      "badge": "parity 88.0% · 8 features · 1k cases",
+      "headline": 0.8844056171536446,
+      "badge": "parity 88.4% · 8 features · 1k cases",
       "headline_features": [
         "base",
         "opt.crown-margin",
@@ -35,13 +35,13 @@
       "raw": {
         "cases": 1000,
         "scored": 1000,
-        "match": 897,
-        "diverge": 103,
+        "match": 900,
+        "diverge": 100,
         "waived": 0,
         "flaky_reference": 0,
-        "flaky_candidate": 1,
-        "timeouts": 1,
-        "parity": 0.897
+        "flaky_candidate": 0,
+        "timeouts": 0,
+        "parity": 0.9
       },
       "origins": {
         "recorded": {
@@ -61,23 +61,23 @@
         "generated": {
           "cases": 1000,
           "scored": 1000,
-          "match": 897,
+          "match": 900,
           "features": 8,
-          "parity": 0.8803697027147697
+          "parity": 0.8844056171536446
         }
       },
       "features": [
         {
           "feature": "base",
-          "parity": 0.9774436090225563,
+          "parity": 0.9849624060150376,
           "cases": 133,
           "scored": 133,
-          "match": 130,
-          "diverge": 3,
+          "match": 131,
+          "diverge": 2,
           "waived": 0,
           "flaky_reference": 0,
-          "flaky_candidate": 1,
-          "timeouts": 1,
+          "flaky_candidate": 0,
+          "timeouts": 0,
           "self_description": false,
           "under_sampled": false,
           "in_headline": true
@@ -174,11 +174,11 @@
         },
         {
           "feature": "opt.uniform-spacing",
-          "parity": 0.98125,
+          "parity": 0.9875,
           "cases": 160,
           "scored": 160,
-          "match": 157,
-          "diverge": 3,
+          "match": 158,
+          "diverge": 2,
           "waived": 0,
           "flaky_reference": 0,
           "flaky_candidate": 0,
@@ -204,11 +204,11 @@
         },
         {
           "feature": "opt.width",
-          "parity": 0.9629629629629629,
+          "parity": 0.9814814814814815,
           "cases": 54,
           "scored": 54,
-          "match": 52,
-          "diverge": 2,
+          "match": 53,
+          "diverge": 1,
           "waived": 0,
           "flaky_reference": 0,
           "flaky_candidate": 0,
@@ -229,8 +229,8 @@
     {
       "candidate": 2,
       "command": "/opt/uu-main/coreutils fmt",
-      "headline": 0.9238095523388298,
-      "badge": "parity 92.3% · 8 features · 1k cases",
+      "headline": 0.9269056171536446,
+      "badge": "parity 92.6% · 8 features · 1k cases",
       "headline_features": [
         "base",
         "opt.crown-margin",
@@ -244,13 +244,13 @@
       "raw": {
         "cases": 1000,
         "scored": 1000,
-        "match": 915,
-        "diverge": 85,
+        "match": 917,
+        "diverge": 83,
         "waived": 0,
         "flaky_reference": 0,
         "flaky_candidate": 0,
         "timeouts": 0,
-        "parity": 0.915
+        "parity": 0.917
       },
       "origins": {
         "recorded": {
@@ -270,9 +270,9 @@
         "generated": {
           "cases": 1000,
           "scored": 1000,
-          "match": 915,
+          "match": 917,
           "features": 8,
-          "parity": 0.9238095523388298
+          "parity": 0.9269056171536446
         }
       },
       "features": [
@@ -383,11 +383,11 @@
         },
         {
           "feature": "opt.uniform-spacing",
-          "parity": 0.98125,
+          "parity": 0.9875,
           "cases": 160,
           "scored": 160,
-          "match": 157,
-          "diverge": 3,
+          "match": 158,
+          "diverge": 2,
           "waived": 0,
           "flaky_reference": 0,
           "flaky_candidate": 0,
@@ -413,11 +413,11 @@
         },
         {
           "feature": "opt.width",
-          "parity": 0.9629629629629629,
+          "parity": 0.9814814814814815,
           "cases": 54,
           "scored": 54,
-          "match": 52,
-          "diverge": 2,
+          "match": 53,
+          "diverge": 1,
           "waived": 0,
           "flaky_reference": 0,
           "flaky_candidate": 0,
@@ -457,8 +457,8 @@
         "diverge": 908,
         "waived": 0,
         "flaky_reference": 0,
-        "flaky_candidate": 2,
-        "timeouts": 1,
+        "flaky_candidate": 0,
+        "timeouts": 0,
         "parity": 0.092
       },
       "origins": {
@@ -494,8 +494,8 @@
           "diverge": 61,
           "waived": 0,
           "flaky_reference": 0,
-          "flaky_candidate": 1,
-          "timeouts": 1,
+          "flaky_candidate": 0,
+          "timeouts": 0,
           "self_description": false,
           "under_sampled": false,
           "in_headline": true
@@ -509,7 +509,7 @@
           "diverge": 150,
           "waived": 0,
           "flaky_reference": 0,
-          "flaky_candidate": 1,
+          "flaky_candidate": 0,
           "timeouts": 0,
           "self_description": false,
           "under_sampled": false,
@@ -881,76 +881,6 @@
     },
     {
       "cluster": 5,
-      "candidate": 1,
-      "description": "exit timeout vs 1, stderr empty (reference empty)",
-      "fields": [
-        "exit",
-        "signal",
-        "timeout",
-        "stderr"
-      ],
-      "shapes": [
-        {
-          "field": "exit",
-          "shape": "exit-code",
-          "detail": "timeout vs 1"
-        },
-        {
-          "field": "stderr",
-          "shape": "empty",
-          "detail": "reference empty"
-        }
-      ],
-      "features": [
-        {
-          "feature": "opt.width",
-          "cases": 1
-        }
-      ],
-      "size": 1,
-      "weight": 0.018518518518518517,
-      "cases": [
-        "sha256:2d7212d26f0885b1edad8646b24319d6c0c22be96dc2eada85c5ac218f1bb06a"
-      ],
-      "repro": "sha256:2d7212d26f0885b1edad8646b24319d6c0c22be96dc2eada85c5ac218f1bb06a"
-    },
-    {
-      "cluster": 6,
-      "candidate": 1,
-      "description": "exit timeout vs 0, stdout empty (reference empty)",
-      "fields": [
-        "exit",
-        "signal",
-        "timeout",
-        "stdout"
-      ],
-      "shapes": [
-        {
-          "field": "exit",
-          "shape": "exit-code",
-          "detail": "timeout vs 0"
-        },
-        {
-          "field": "stdout",
-          "shape": "empty",
-          "detail": "reference empty"
-        }
-      ],
-      "features": [
-        {
-          "feature": "opt.uniform-spacing",
-          "cases": 1
-        }
-      ],
-      "size": 1,
-      "weight": 0.00625,
-      "cases": [
-        "sha256:2d7393637481a6b77ae885d4cd6faaa27f00bc04e95b324032cbe39b02c25702"
-      ],
-      "repro": "sha256:2d7393637481a6b77ae885d4cd6faaa27f00bc04e95b324032cbe39b02c25702"
-    },
-    {
-      "cluster": 7,
       "candidate": 2,
       "description": "stdout other",
       "fields": [
@@ -981,7 +911,7 @@
       "repro": "sha256:f14f7e9ac4c72367c91ccb01a9b6c0c4f299f24c712684175333a52536c7e211"
     },
     {
-      "cluster": 8,
+      "cluster": 6,
       "candidate": 2,
       "description": "stdout missing-trailing-newline (reference)",
       "fields": [
@@ -1062,7 +992,7 @@
       "repro": "sha256:23c5cc134afec481a6473e82298565a803accb26dcb7d5466490631c7590f098"
     },
     {
-      "cluster": 9,
+      "cluster": 7,
       "candidate": 2,
       "description": "stderr message-text",
       "fields": [
@@ -1100,7 +1030,7 @@
       "repro": "sha256:dfafa4974a7797fed37b44c56cb49e6dee155d66f0c3959922873213727100cf"
     },
     {
-      "cluster": 10,
+      "cluster": 8,
       "candidate": 2,
       "description": "stdout whitespace-only",
       "fields": [
@@ -1166,77 +1096,7 @@
       "repro": "sha256:abd079ebe4c458c59080a53169dca54604048d833a1947de72a5251373016358"
     },
     {
-      "cluster": 11,
-      "candidate": 2,
-      "description": "exit timeout vs 1, stderr empty (reference empty)",
-      "fields": [
-        "exit",
-        "signal",
-        "timeout",
-        "stderr"
-      ],
-      "shapes": [
-        {
-          "field": "exit",
-          "shape": "exit-code",
-          "detail": "timeout vs 1"
-        },
-        {
-          "field": "stderr",
-          "shape": "empty",
-          "detail": "reference empty"
-        }
-      ],
-      "features": [
-        {
-          "feature": "opt.width",
-          "cases": 1
-        }
-      ],
-      "size": 1,
-      "weight": 0.018518518518518517,
-      "cases": [
-        "sha256:2d7212d26f0885b1edad8646b24319d6c0c22be96dc2eada85c5ac218f1bb06a"
-      ],
-      "repro": "sha256:2d7212d26f0885b1edad8646b24319d6c0c22be96dc2eada85c5ac218f1bb06a"
-    },
-    {
-      "cluster": 12,
-      "candidate": 2,
-      "description": "exit timeout vs 0, stdout empty (reference empty)",
-      "fields": [
-        "exit",
-        "signal",
-        "timeout",
-        "stdout"
-      ],
-      "shapes": [
-        {
-          "field": "exit",
-          "shape": "exit-code",
-          "detail": "timeout vs 0"
-        },
-        {
-          "field": "stdout",
-          "shape": "empty",
-          "detail": "reference empty"
-        }
-      ],
-      "features": [
-        {
-          "feature": "opt.uniform-spacing",
-          "cases": 1
-        }
-      ],
-      "size": 1,
-      "weight": 0.00625,
-      "cases": [
-        "sha256:2d7393637481a6b77ae885d4cd6faaa27f00bc04e95b324032cbe39b02c25702"
-      ],
-      "repro": "sha256:2d7393637481a6b77ae885d4cd6faaa27f00bc04e95b324032cbe39b02c25702"
-    },
-    {
-      "cluster": 13,
+      "cluster": 9,
       "candidate": 3,
       "description": "exit 0 vs 1, stdout empty (candidate empty), stderr empty (reference empty)",
       "fields": [
@@ -1276,11 +1136,11 @@
         },
         {
           "feature": "opt.uniform-spacing",
-          "cases": 156
+          "cases": 157
         },
         {
           "feature": "opt.crown-margin",
-          "cases": 148
+          "cases": 149
         },
         {
           "feature": "opt.goal",
@@ -1291,8 +1151,8 @@
           "cases": 13
         }
       ],
-      "size": 798,
-      "weight": 5.876028514888969,
+      "size": 800,
+      "weight": 5.888945181555636,
       "cases": [
         "sha256:0012b3caac39c42a7ae619f4c68aeb1a6313f7f6162adbef704f2eb7a711597a",
         "sha256:0015d644338ef687897b17f9da05fef35be3128b6e3b9c83a25f9403622bd7ae",
@@ -1434,6 +1294,8 @@
         "sha256:2bda834e2178eb29491a8e9d0a7daae8746f486457e180a5caf6c190934d2c55",
         "sha256:2c37307d84232e8d2f2f6feb0ab4875e18b425fccfe60c322ffc14dc00831502",
         "sha256:2c806e0fa3335e1f981951d71464b93344e297662863b4b205a25c9782e5c6a3",
+        "sha256:2d23e3ad91012b47aadf113bc1f5dbe694fc2b6dcaf9c6de023f56f9d5576b9c",
+        "sha256:2d7393637481a6b77ae885d4cd6faaa27f00bc04e95b324032cbe39b02c25702",
         "sha256:2dc232c0cb3ef01926732660d79dbd4ff2630371f2c03fd32242ec78aa53c81f",
         "sha256:2e02a06113a62bab1e4467beda0a2f43fa91cdcfd90e75797d3fa7f4a3dff790",
         "sha256:2eff35e0ebdd34dd972da50fec5adb38e653b05a98726886dee5f902bd15b40b",
@@ -2096,7 +1958,7 @@
       "repro": "sha256:011b2a904fe13aa0615fada13b09830f7df1efda0047d73ab43b8f2995e2dc3e"
     },
     {
-      "cluster": 14,
+      "cluster": 10,
       "candidate": 3,
       "description": "stdout other",
       "fields": [
@@ -2180,7 +2042,7 @@
       "repro": "sha256:023e528d1facd2a29b0aab81e5a211c80c5d15ce79a735a789784feb32100e04"
     },
     {
-      "cluster": 15,
+      "cluster": 11,
       "candidate": 3,
       "description": "stderr message-text",
       "fields": [
@@ -2199,20 +2061,21 @@
         },
         {
           "feature": "opt.width",
-          "cases": 5
+          "cases": 6
         },
         {
           "feature": "base",
           "cases": 1
         }
       ],
-      "size": 21,
-      "weight": 0.40011138958507386,
+      "size": 22,
+      "weight": 0.41862990810359246,
       "cases": [
         "sha256:096127501e89f7a3be9a934aaab3113f33458a1c3a8d1690a72f664b9dc48ed9",
         "sha256:138414830799dcc29949ada5e15289d973c10491ca3d51ea0e70d28c204bc263",
         "sha256:155818b91526a18094f77efd30a7137fc8b69ddffb4c8a04dc3ac59ac0942b7e",
         "sha256:250ff5157e958ac3c521a0b4d17d789ade473937a02789f9f6ce30d98a442e3d",
+        "sha256:2d7212d26f0885b1edad8646b24319d6c0c22be96dc2eada85c5ac218f1bb06a",
         "sha256:4246bfd7ba428e72e83a28d051443b6e4486317a896c87809e123a8c7e22f1e4",
         "sha256:4fac591a7899c9a7d2f2d013bac123a0df8e3eb1259e6fe1dd306e8447ad0640",
         "sha256:520fbe89fa1ae89c240403a647d5a68c039f8ca0bb336d532c18965226d927e7",
@@ -2234,7 +2097,7 @@
       "repro": "sha256:155818b91526a18094f77efd30a7137fc8b69ddffb4c8a04dc3ac59ac0942b7e"
     },
     {
-      "cluster": 16,
+      "cluster": 12,
       "candidate": 3,
       "description": "stdout prefix-suffix (candidate adds to the start)",
       "fields": [
@@ -2250,19 +2113,20 @@
       "features": [
         {
           "feature": "base",
-          "cases": 15
+          "cases": 16
         },
         {
           "feature": "opt.width",
           "cases": 10
         }
       ],
-      "size": 25,
-      "weight": 0.29796714007240316,
+      "size": 26,
+      "weight": 0.3054859370648844,
       "cases": [
         "sha256:0639df3e10dd1b0f8d198711d77eda9a584eef5fed676742e4c5b886c07ea035",
         "sha256:166bcab3d00a229cca77ae3348c5422d34602b3b359677eaeb18782b1a740302",
         "sha256:1e5f389f8bf944b9c819816b2624a43fc3b658d76bf8e192680eb0fd69fd99a4",
+        "sha256:2d2178365e46c8afa174e2b96ce44eaf04dc1d72bc17feb91127937eb50ef3b1",
         "sha256:33774d3170dd3eff0dc052041d978600c3e1cfe438cda230505be6655b7d6d85",
         "sha256:426091ca469d31fed8442dbe84ea6a5e6b485e4d91523e0fd67ceaef19b34e57",
         "sha256:4fb6831364cbb8ddc063053e08bb1227a7d171e78f0063f217acfe595c888ed4",
@@ -2289,7 +2153,7 @@
       "repro": "sha256:b88b81d13d347e8bccac139e56983680ca474c147f17716fcb5b8126f73cbaed"
     },
     {
-      "cluster": 17,
+      "cluster": 13,
       "candidate": 3,
       "description": "exit 0 vs 1, stderr empty (reference empty)",
       "fields": [
@@ -2351,7 +2215,7 @@
       "repro": "sha256:79357be81c9a39650e3783bbd89b5990a84c3f5e622944bca08505b6f76c4544"
     },
     {
-      "cluster": 18,
+      "cluster": 14,
       "candidate": 3,
       "description": "exit 1 vs 0, stdout empty (reference empty), stderr empty (candidate empty)",
       "fields": [
@@ -2390,46 +2254,6 @@
         "sha256:f4617c7f3f94bde859677e7af949b5bde319839e4ddef773513412f56009e36d"
       ],
       "repro": "sha256:f4617c7f3f94bde859677e7af949b5bde319839e4ddef773513412f56009e36d"
-    },
-    {
-      "cluster": 19,
-      "candidate": 3,
-      "description": "exit timeout vs 1, stderr empty (reference empty)",
-      "fields": [
-        "exit",
-        "signal",
-        "timeout",
-        "stderr"
-      ],
-      "shapes": [
-        {
-          "field": "exit",
-          "shape": "exit-code",
-          "detail": "timeout vs 1"
-        },
-        {
-          "field": "stderr",
-          "shape": "empty",
-          "detail": "reference empty"
-        }
-      ],
-      "features": [
-        {
-          "feature": "opt.uniform-spacing",
-          "cases": 1
-        },
-        {
-          "feature": "opt.width",
-          "cases": 1
-        }
-      ],
-      "size": 2,
-      "weight": 0.024768518518518516,
-      "cases": [
-        "sha256:2d7212d26f0885b1edad8646b24319d6c0c22be96dc2eada85c5ac218f1bb06a",
-        "sha256:2d7393637481a6b77ae885d4cd6faaa27f00bc04e95b324032cbe39b02c25702"
-      ],
-      "repro": "sha256:2d7212d26f0885b1edad8646b24319d6c0c22be96dc2eada85c5ac218f1bb06a"
     }
   ]
 }
