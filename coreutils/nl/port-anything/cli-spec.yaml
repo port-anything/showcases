@@ -1,0 +1,93 @@
+version: 1
+program: nl
+flags:
+  - names: [ -b, --body-numbering ]
+    feature: opt.body-numbering
+    description: use STYLE for numbering body lines
+    arity: 1
+    values:
+      - name: STYLE
+        type: string
+  - names: [ -d, --section-delimiter ]
+    feature: opt.section-delimiter
+    description: use CC for logical page delimiters
+    arity: 1
+    values:
+      - name: CC
+        type: string
+  - names: [ -f, --footer-numbering ]
+    feature: opt.footer-numbering
+    description: use STYLE for numbering footer lines
+    arity: 1
+    values:
+      - name: STYLE
+        type: string
+  - names: [ -h, --header-numbering ]
+    feature: opt.header-numbering
+    description: use STYLE for numbering header lines
+    arity: 1
+    values:
+      - name: STYLE
+        type: string
+  - names: [ -i, --line-increment ]
+    feature: opt.line-increment
+    description: line number increment at each line
+    arity: 1
+    values:
+      - name: NUMBER
+        type: int
+  - names: [ -l, --join-blank-lines ]
+    feature: opt.join-blank-lines
+    description: group of NUMBER empty lines counted as one
+    arity: 1
+    values:
+      - name: NUMBER
+        type: int
+  - names: [ -n, --number-format ]
+    feature: opt.number-format
+    description: insert line numbers according to FORMAT
+    arity: 1
+    values:
+      - name: FORMAT
+        type: string
+  - names: [ -p, --no-renumber ]
+    feature: opt.no-renumber
+    description: do not reset line numbers for each section
+    arity: 0
+  - names: [ -s, --number-separator ]
+    feature: opt.number-separator
+    description: add STRING after (possible) line number
+    arity: 1
+    values:
+      - name: STRING
+        type: string
+  - names: [ -v, --starting-line-number ]
+    feature: opt.starting-line-number
+    description: first line number for each section
+    arity: 1
+    values:
+      - name: NUMBER
+        type: int
+  - names: [ -w, --number-width ]
+    feature: opt.number-width
+    description: use NUMBER columns for line numbers
+    arity: 1
+    values:
+      - name: NUMBER
+        type: int
+  - names: [ --help ]
+    feature: opt.help
+    description: display this help and exit
+    arity: 0
+    self_description: true
+  - names: [ --version ]
+    feature: opt.version
+    description: output version information and exit
+    arity: 0
+    self_description: true
+forms:
+  - usage: nl [OPTION]... [FILE]...
+    args:
+      - name: FILE
+        type: path
+        arity: "*"

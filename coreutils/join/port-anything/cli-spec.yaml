@@ -1,0 +1,98 @@
+version: 1
+program: join
+flags:
+  - names: [ -a ]
+    feature: opt.a
+    description: also print unpairable lines from file FILENUM, where FILENUM is 1 or 2, corresponding to FILE1 or FILE2
+    arity: 1
+    values:
+      - name: FILENUM
+        type: string
+  - names: [ -e ]
+    feature: opt.e
+    description: replace missing (empty) input fields with STRING; I.e., missing fields specified with '-12jo' options
+    arity: 1
+    values:
+      - name: STRING
+        type: string
+  - names: [ -i, --ignore-case ]
+    feature: opt.ignore-case
+    description: ignore differences in case when comparing fields
+    arity: 0
+  - names: [ -j ]
+    feature: opt.j
+    description: equivalent to '-1 FIELD -2 FIELD'
+    arity: 1
+    values:
+      - name: FIELD
+        type: string
+  - names: [ -o ]
+    feature: opt.o
+    description: obey FORMAT while constructing output line
+    arity: 1
+    values:
+      - name: FORMAT
+        type: string
+  - names: [ -t ]
+    feature: opt.t
+    description: use CHAR as input and output field separator
+    arity: 1
+    values:
+      - name: CHAR
+        type: string
+  - names: [ -v ]
+    feature: opt.v
+    description: like -a FILENUM, but suppress joined output lines
+    arity: 1
+    values:
+      - name: FILENUM
+        type: string
+  - names: [ "-1" ]
+    feature: opt.1
+    description: join on this FIELD of file 1
+    arity: 1
+    values:
+      - name: FIELD
+        type: string
+  - names: [ "-2" ]
+    feature: opt.2
+    description: join on this FIELD of file 2
+    arity: 1
+    values:
+      - name: FIELD
+        type: string
+  - names: [ --check-order ]
+    feature: opt.check-order
+    description: check that the input is correctly sorted, even if all input lines are pairable
+    arity: 0
+  - names: [ --nocheck-order ]
+    feature: opt.nocheck-order
+    description: do not check that the input is correctly sorted
+    arity: 0
+  - names: [ --header ]
+    feature: opt.header
+    description: treat the first line in each file as field headers, print them without trying to pair them
+    arity: 0
+  - names: [ -z, --zero-terminated ]
+    feature: opt.zero-terminated
+    description: line delimiter is NUL, not newline
+    arity: 0
+  - names: [ --help ]
+    feature: opt.help
+    description: display this help and exit
+    arity: 0
+    self_description: true
+  - names: [ --version ]
+    feature: opt.version
+    description: output version information and exit
+    arity: 0
+    self_description: true
+forms:
+  - usage: join [OPTION]... FILE1 FILE2
+    args:
+      - name: FILE1
+        type: path
+        arity: "1"
+      - name: FILE2
+        type: path
+        arity: "1"

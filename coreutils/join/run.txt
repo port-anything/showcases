@@ -1,0 +1,30 @@
+Ran 1000 cases as "join", sandbox: bwrap, no network (processes not isolated)
+run 20261015-131127-bc40
+reference /opt/gnu/bin/join
+compare standard (stderr loose, similarity 0.6)
+normalizers: none
+candidate 1 /opt/uu/coreutils join: 963 of 1000 cases match, 37 diverge
+  parity 97.3%, mean of 4 features (963 of 1000 scored cases match)
+  under-sampled, not in the parity: opt.ignore-case 100.0% (4 cases), opt.nocheck-order 100.0% (3 cases)
+  self-description, not in the parity: opt.help 0.0% (1 case), opt.version 0.0% (1 case)
+  cluster 1: 2 cases · stdout other · features opt.help (1), opt.version (1)
+    c_3f658673  c_46c5cc24
+  cluster 2: 20 cases · stdout whitespace-only · features opt.zero-terminated (12), base (8)
+    c_079583c7  c_0dcc83b4  c_13d21e95  c_18e1b081  c_2242d42a  … and 15 more
+  cluster 3: 10 cases · stderr message-text · features base (7), opt.t (3)
+    c_08c2b584  c_0aeda59c  c_19da564a  c_1dc907ff  c_1ff9140b  … and 5 more
+  cluster 4: 5 cases · exit timeout vs 0, stdout empty (reference empty) · features opt.zero-terminated (4), opt.t (1)
+    c_760779d9  c_760fb103  c_765a5e14  c_766f46e1  c_76897745
+candidate 2 /opt/uu-main/coreutils join: 971 of 1000 cases match, 29 diverge
+  parity 98.2%, mean of 4 features (971 of 1000 scored cases match)
+  under-sampled, not in the parity: opt.ignore-case 100.0% (4 cases), opt.nocheck-order 100.0% (3 cases)
+  self-description, not in the parity: opt.help 0.0% (1 case), opt.version 0.0% (1 case)
+  cluster 5: 2 cases · stdout other · features opt.help (1), opt.version (1)
+    c_3f658673  c_46c5cc24
+  cluster 6: 20 cases · stdout whitespace-only · features opt.zero-terminated (12), base (8)
+    c_079583c7  c_0dcc83b4  c_13d21e95  c_18e1b081  c_2242d42a  … and 15 more
+  cluster 7: 5 cases · exit timeout vs 0, stdout empty (reference empty) · features opt.zero-terminated (4), opt.t (1)
+    c_760779d9  c_760fb103  c_765a5e14  c_766f46e1  c_76897745
+  cluster 8: 2 cases · stderr message-text · features base (2)
+    c_19da564a  c_1dc907ff
+run exit 1

@@ -1,0 +1,129 @@
+version: 1
+program: numfmt
+flags:
+  - names: [ --debug ]
+    feature: opt.debug
+    description: print warnings about invalid input
+    arity: 0
+  - names: [ -d, --delimiter ]
+    feature: opt.delimiter
+    description: use X instead of whitespace for field delimiter
+    arity: 1
+    values:
+      - name: X
+        type: string
+  - names: [ --field ]
+    feature: opt.field
+    description: replace the numbers in these input fields (default=1); see FIELDS below for details
+    arity: 1
+    values:
+      - name: FIELDS
+        type: string
+  - names: [ --format ]
+    feature: opt.format
+    description: use printf style floating-point FORMAT; see FORMAT below for details
+    arity: 1
+    values:
+      - name: FORMAT
+        type: string
+  - names: [ --from ]
+    feature: opt.from
+    description: auto-scale input numbers to UNITs; default is 'none'; see UNIT below for details
+    arity: 1
+    values:
+      - name: UNIT
+        type: string
+  - names: [ --from-unit ]
+    feature: opt.from-unit
+    description: specify the input unit size (instead of the default 1)
+    arity: 1
+    values:
+      - name: N
+        type: int
+  - names: [ --grouping ]
+    feature: opt.grouping
+    description: use locale-defined grouping of digits, e.g. 1,000,000. This has no effect in the C/POSIX locale
+    arity: 0
+  - names: [ --header ]
+    feature: opt.header
+    description: print (without converting) the first N header lines; N defaults to 1 if not specified
+    arity: 1
+    values:
+      - name: N
+        type: int
+        optional: true
+  - names: [ --invalid ]
+    feature: opt.invalid
+    description: "failure mode for invalid numbers; MODE can be: abort (default), fail, warn, ignore"
+    arity: 1
+    values:
+      - name: MODE
+        type: enum
+        choices: [ abort, fail, warn, ignore ]
+  - names: [ --padding ]
+    feature: opt.padding
+    description: pad the output to N characters; positive N will right-align, negative N will left-align; padding is ignored if the output is wider than N; the default is to automatically pad if a whitespace is found
+    arity: 1
+    values:
+      - name: N
+        type: int
+  - names: [ --round ]
+    feature: opt.round
+    description: "use METHOD for rounding when scaling; METHOD can be: up, down, from-zero (default), towards-zero, nearest"
+    arity: 1
+    values:
+      - name: METHOD
+        type: enum
+        choices: [ up, down, from-zero, towards-zero, nearest ]
+  - names: [ --suffix ]
+    feature: opt.suffix
+    description: add SUFFIX to output numbers, and accept an optional SUFFIX in input numbers
+    arity: 1
+    values:
+      - name: SUFFIX
+        type: string
+  - names: [ --unit-separator ]
+    feature: opt.unit-separator
+    description: insert SEP between number and unit on output, and accept an optional SEP in input numbers
+    arity: 1
+    values:
+      - name: SEP
+        type: string
+  - names: [ --to ]
+    feature: opt.to
+    description: auto-scale output numbers to UNITs; see UNIT below
+    arity: 1
+    values:
+      - name: UNIT
+        type: string
+  - names: [ --to-unit ]
+    feature: opt.to-unit
+    description: the output unit size (instead of the default 1)
+    arity: 1
+    values:
+      - name: N
+        type: int
+  - names: [ -z, --zero-terminated ]
+    feature: opt.zero-terminated
+    description: line delimiter is NUL, not newline
+    arity: 0
+  - names: [ --help ]
+    feature: opt.help
+    description: display this help and exit
+    arity: 0
+    self_description: true
+  - names: [ --version ]
+    feature: opt.version
+    description: output version information and exit
+    arity: 0
+    self_description: true
+  - names: [ -M ]
+    feature: opt.M
+    description: from first to M'th field (inclusive)
+    arity: 0
+forms:
+  - usage: numfmt [OPTION]... [NUMBER]...
+    args:
+      - name: NUMBER
+        type: int
+        arity: "*"

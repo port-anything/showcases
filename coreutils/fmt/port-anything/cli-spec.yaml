@@ -1,0 +1,71 @@
+version: 1
+program: fmt
+flags:
+  - names: [ -c, --crown-margin ]
+    feature: opt.crown-margin
+    description: preserve indentation of first two lines
+    arity: 0
+  - names: [ -p, --prefix ]
+    feature: opt.prefix
+    description: reformat only lines beginning with STRING, reattaching the prefix to reformatted lines
+    arity: 1
+    values:
+      - name: STRING
+        type: string
+  - names: [ -s, --split-only ]
+    feature: opt.split-only
+    description: split long lines, but do not refill
+    arity: 0
+  - names: [ -t, --tagged-paragraph ]
+    feature: opt.tagged-paragraph
+    description: indentation of first line different from second
+    arity: 0
+  - names: [ -u, --uniform-spacing ]
+    feature: opt.uniform-spacing
+    description: one space between words, two after sentences
+    arity: 0
+  - names: [ -w, --width ]
+    feature: opt.width
+    description: maximum line width (default of 75 columns)
+    arity: 1
+    values:
+      - name: WIDTH
+        type: int
+  - names: [ -g, --goal ]
+    feature: opt.goal
+    description: goal width (default of 93% of width)
+    arity: 1
+    values:
+      - name: WIDTH
+        type: int
+  - names: [ --help ]
+    feature: opt.help
+    description: display this help and exit
+    arity: 0
+    self_description: true
+  - names: [ --version ]
+    feature: opt.version
+    description: output version information and exit
+    arity: 0
+    self_description: true
+  - names: [ -W ]
+    feature: opt.W
+    arity: 0
+  - names: [ -I ]
+    feature: opt.I
+    arity: 0
+  - names: [ -D ]
+    feature: opt.D
+    arity: 0
+  - names: [ -T ]
+    feature: opt.T
+    arity: 0
+  - names: [ -H ]
+    feature: opt.H
+    arity: 0
+forms:
+  - usage: fmt [-WIDTH] [OPTION]... [FILE]...
+    args:
+      - name: FILE
+        type: path
+        arity: "*"
