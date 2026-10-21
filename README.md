@@ -1,6 +1,6 @@
 # Port Anything showcases
 
-Compatibility matrices produced with [port-anything](https://github.com/port-anything/port-anything): one reference implementation, several candidates, generated test cases, per-feature parity, clustered divergences with minimized repros.
+Compatibility matrices produced with [port-anything](https://github.com/karolkulesza/port-anything): one reference implementation, several candidates, generated test cases, per-feature parity, clustered divergences with minimized repros.
 
 | Directory | Reference | Candidates | Cases |
 |---|---|---|---|
