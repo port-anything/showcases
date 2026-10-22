@@ -7,6 +7,8 @@ Compatibility matrices produced with [port-anything](https://github.com/karolkul
 | [`coreutils/`](coreutils/) | GNU coreutils 9.12 | uutils 0.12.0 and `main`, busybox 1.38.0, toybox 0.8.15 | 1000 generated per utility (`od`, `nl`, `comm`, `fmt`, `join`, `numfmt`) |
 | [`jq/`](jq/) | jq 1.8.2 | jaq 3.1.1, gojq 0.12.19 | 550 from jq's own `tests/jq.test` + 2920 token mutants |
 
+The story behind the numbers, how the cases were made and what was found: [WRITEUP.md](WRITEUP.md).
+
 ## Findings
 
 Every finding below was reproduced by hand outside the tool, then checked against the project's issue tracker before being counted as new.
