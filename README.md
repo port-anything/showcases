@@ -16,18 +16,17 @@ Every finding below was reproduced by hand outside the tool, then checked agains
 | uutils | `numfmt` rejects scientific notation in unselected fields | fixed upstream ([#15312](https://github.com/uutils/coreutils/issues/15312)) |
 | uutils | `od -B` rejected | fixed upstream ([#15313](https://github.com/uutils/coreutils/issues/15313)) |
 | uutils | `od -S` skips the "cannot skip past end of combined input" check | fixed upstream ([#15314](https://github.com/uutils/coreutils/issues/15314)) |
-| gojq | `abs` on non-numbers | fixed upstream (on `main`, unreleased) |
-| uutils | `numfmt` keeps a tab between fields; GNU prints a space | new |
-| uutils | `fmt -p`: an unprefixed last line without a newline gets one | new |
-| uutils | `od -w1K` accepted, `nl -l <huge>` rejected | new |
-| busybox | `od` with mixed type sizes prints the last block's zero padding as input | new |
-| toybox | `fmt` writes `\e[7m\e[27m` into its output for words with control bytes | new |
-| jaq | panic instead of a syntax error when a filter ends inside a comment | new |
-| jaq | stack-overflow abort on deeply nested values | new (related: jaq #454, #467) |
-| jaq | `from_entries` ignores `name`/`Name`/`Key`/`Value` | new |
-| gojq | `isnan` errors on non-numbers (jq returns `false`) | new (minor, may be intentional) |
+| uutils | `numfmt` keeps a tab between fields; GNU prints a space | fixed upstream ([#15552](https://github.com/uutils/coreutils/issues/15552)) |
+| uutils | `fmt -p`: an unprefixed last line without a newline gets one | fixed upstream ([#15553](https://github.com/uutils/coreutils/issues/15553)) |
+| uutils | `od -w1K` accepted, `nl -l <huge>` rejected | fixed upstream ([#15551](https://github.com/uutils/coreutils/issues/15551)) |
+| busybox | `od` with mixed type sizes prints the last block's zero padding as input | not reported (busybox takes reports on its mailing list) |
+| toybox | `fmt` writes `\e[7m\e[27m` into its output for words with control bytes | reported ([#615](https://github.com/landley/toybox/issues/615)) |
+| jaq | panic instead of a syntax error when a filter ends inside a comment | fixed upstream ([#476](https://github.com/01mf02/jaq/issues/476)) |
+| jaq | stack-overflow abort on deeply nested values | documented by jaq as out of scope ([#477](https://github.com/01mf02/jaq/issues/477)) |
+| jaq | `from_entries` ignores `name`/`Name`/`Key`/`Value` | documented by jaq as an incompatibility ([#478](https://github.com/01mf02/jaq/issues/478)) |
+| gojq | `isnan` errors on non-numbers (jq returns `false`) | changed to match jq ([#327](https://github.com/itchyny/gojq/issues/327); gojq had chosen this on purpose) |
 
-Already tracked upstream (not counted): see the per-directory READMEs.
+gojq's `abs` on non-numbers was already fixed on gojq's `main` before these runs, so it isn't counted. Already tracked upstream (not counted): see the per-directory READMEs.
 
 ## Method and caveats
 

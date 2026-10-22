@@ -15,12 +15,12 @@ Parity = mean per-feature match rate (exit status, stdout, stderr), truncated to
 
 ## What the divergences are
 
-**New** (reproduced by hand, no matching issue found):
-- `numfmt` with the default delimiter keeps a tab between fields; GNU writes a space. `printf '1\t2\n' | numfmt` → GNU `1 2`, uutils `1<TAB>2`.
-- `fmt -p PREFIX` adds a newline to an unprefixed last line that has none (GNU copies it unchanged). `printf x | fmt -p '#'` → GNU `x`, uutils `x\n`.
-- `od -w1K` accepted (GNU rejects the suffix); `nl -l 18446744073709551616` rejected (GNU accepts).
-- busybox `od -c -x` (output types of different sizes) prints the zero padding of the last block as if it were input. Related code path: busybox bug 13246.
-- toybox `fmt`: `printf 'a\001b\n' | toybox fmt` writes `\e[7m\e[27m` before the word. `utf8len()` emits the reverse-video escapes even when it only measures.
+**New** (reproduced by hand, no matching issue found at the time; reported 2026-10-20):
+- `numfmt` with the default delimiter keeps a tab between fields; GNU writes a space. `printf '1\t2\n' | numfmt` → GNU `1 2`, uutils `1<TAB>2`. Fixed upstream ([#15552](https://github.com/uutils/coreutils/issues/15552)).
+- `fmt -p PREFIX` adds a newline to an unprefixed last line that has none (GNU copies it unchanged). `printf x | fmt -p '#'` → GNU `x`, uutils `x\n`. Fixed upstream ([#15553](https://github.com/uutils/coreutils/issues/15553)).
+- `od -w1K` accepted (GNU rejects the suffix); `nl -l 18446744073709551616` rejected (GNU accepts). Fixed upstream ([#15551](https://github.com/uutils/coreutils/issues/15551)).
+- busybox `od -c -x` (output types of different sizes) prints the zero padding of the last block as if it were input. Related code path: busybox bug 13246. Not reported (busybox takes reports on its mailing list).
+- toybox `fmt`: `printf 'a\001b\n' | toybox fmt` writes `\e[7m\e[27m` before the word. `utf8len()` emits the reverse-video escapes even when it only measures. Reported: [landley/toybox#615](https://github.com/landley/toybox/issues/615).
 
 **Fixed upstream** (found by earlier runs of the same setup): uutils `numfmt` scientific notation in unselected fields (#15312), `od -B` (#15313), `od -S` past end of input (#15314).
 

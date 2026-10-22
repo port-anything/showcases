@@ -18,15 +18,15 @@ Percentages are truncated to one decimal, as in the report. Raw match rates, not
 
 ## Findings
 
-**New** (reproduced by hand, no matching issue found):
-- jaq panics (exit 101) instead of reporting a syntax error when a filter ends inside a comment with a bracket open: `jaq -n '(#'`. Found only by mutation.
-- jaq aborts with a stack overflow (exit 134) on deeply nested values: printing, `tojson`, JSON input and `fromjson` from a few thousand levels; jq and gojq print or stop with an error at 10000. Related: jaq #454, #467.
-- jaq `from_entries` reads only `key`/`value`; entries using `name`, `Name`, `Key` or `Value` become a `null` key.
-- gojq `isnan` errors on non-numbers where jq returns `false` (minor; may be intentional).
+**New** (reproduced by hand, no matching issue found at the time; reported 2026-10-20):
+- jaq panics (exit 101) instead of reporting a syntax error when a filter ends inside a comment with a bracket open: `jaq -n '(#'`. Found only by mutation. Fixed upstream ([#476](https://github.com/01mf02/jaq/issues/476)).
+- jaq aborts with a stack overflow (exit 134) on deeply nested values: printing, `tojson`, JSON input and `fromjson` from a few thousand levels; jq and gojq print or stop with an error at 10000. jaq documents this as out of scope ([#477](https://github.com/01mf02/jaq/issues/477), its README's "Security" section). Related: jaq #454, #467.
+- jaq `from_entries` reads only `key`/`value`; entries using `name`, `Name`, `Key` or `Value` become a `null` key. Now documented as an incompatibility ([#478](https://github.com/01mf02/jaq/issues/478)).
+- gojq `isnan` errors on non-numbers where jq returns `false`. gojq had chosen this on purpose and changed it to match jq ([#327](https://github.com/itchyny/gojq/issues/327)).
 
 **Fixed upstream:** gojq `abs` on non-numbers (fixed on `main`, unreleased).
 
-**Documented differences** (jaq's manual, gojq's README; not findings): error-message text inside `try … catch .`, gojq's sorted object keys, NaN/Infinity input, decNumber precision and `have_decnum`, features jaq doesn't have (`$__loc__`, `?//`, `INDEX`/`JOIN`, `builtins`, `modulemeta`, …), float indices and slices, updates past the end of arrays, jq's 10000-level depth limits, jaq building huge strings for `"abc" * 1000000000` (timeouts), jq's double arithmetic on large integers.
+**Documented differences** (jaq's manual, gojq's README; not findings): error-message text inside `try … catch .`, gojq's sorted object keys, NaN/Infinity input, decNumber precision and `have_decnum`, features jaq doesn't have (`$__loc__`, `?//`, `INDEX`/`JOIN`, `builtins`, `modulemeta`, …), float indices and slices, updates past the end of arrays, jq's 10000-level depth limits, `"abc" * 1000000000`: jq stops with "Repeat string result too long", jaq builds the 3 GB string fine (`| length` answers at once) and times out printing it, jq's double arithmetic on large integers.
 
 ## Reproduce
 
