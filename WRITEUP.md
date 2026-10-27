@@ -1,4 +1,4 @@
-# Six coreutils, three jq implementations, one matrix: 11 unreported differences, 9 fixed or changed upstream
+# Six coreutils, three jq implementations, one matrix: 11 previously unreported differences, 9 fixed or changed upstream
 
 I ran [Port Anything](https://github.com/karolkulesza/port-anything) against five reimplementations of programs most of us use every day: **uutils, busybox and toybox** against GNU coreutils, and **jaq and gojq** against jq. Each candidate got the same generated cases as the reference, run side by side in a sandbox. Here is how close each one gets to the reference.
 
@@ -82,7 +82,7 @@ And some aren't bugs at all: `--help` and `--version` text, error-message wordin
 A matrix like this is only worth publishing if a divergence means a real difference. What I did about it:
 
 - **Pin the reference.** My prototype run used the distro's GNU coreutils (Ubuntu 25.10 ships 9.5). Three of its "divergences" were GNU 9.5 behavior that later GNU releases changed (`od -w0` aborting, for one). The published runs use GNU 9.12, built from source.
-- **Check the architecture.** A fourth one was the CPU: on arm64, GNU `numfmt` prints a 20-digit number thanks to a 128-bit `long double`, while on x86_64 it fails just like uutils. I caught it by re-running the repro under x86_64. The published runs and the eight new repros haven't had that x86_64 check yet (see Caveats); the ten reported ones were confirmed by their maintainers.
+- **Check the architecture.** A fourth one was the CPU: on arm64, GNU `numfmt` prints a 20-digit number thanks to a 128-bit `long double`, while on x86_64 it fails just like uutils. I caught it by re-running the repro under x86_64. The published runs haven't had that x86_64 check yet (see Caveats). Of the 11 new findings, the 10 I reported were confirmed by their maintainers (fixed, changed or documented); only the busybox one is unconfirmed.
 - **Run the reference more than once.** Every case runs on the reference three times; cases whose output varies are left out instead of being blamed on the candidate. A candidate whose result changes on a re-run is marked flaky.
 - **Same program name, same environment.** Every side runs under the reference's name (multicall binaries like `busybox` get `argv[0]` pinned), in a bubblewrap sandbox with no network, `LANG=C.UTF-8`, `TZ=UTC` and a fixed `SOURCE_DATE_EPOCH`.
 - **Separate self-description from behavior.** `--help` and `--version` are reported on their own and don't count toward parity.
