@@ -19,10 +19,11 @@ Percentages are truncated to one decimal, as in the report. Raw match rates, not
 ## Findings
 
 **New** (reproduced by hand, no matching issue found at the time; reported 2026-10-20):
-- jaq panics (exit 101) instead of reporting a syntax error when a filter ends inside a comment with a bracket open: `jaq -n '(#'`. Found only by mutation. Fixed upstream ([#476](https://github.com/01mf02/jaq/issues/476)).
-- jaq aborts with a stack overflow (exit 134) on deeply nested values: printing, `tojson`, JSON input and `fromjson` from a few thousand levels; jq and gojq print or stop with an error at 10000. jaq documents this as out of scope ([#477](https://github.com/01mf02/jaq/issues/477), its README's "Security" section). Related: jaq #454, #467.
+- jaq panics (exit 101) instead of reporting a syntax error when a filter ends inside a comment with a bracket open: `jaq -n '(#'`. Found only by mutation. Fixed upstream, released in jaq 3.1.2 ([#476](https://github.com/01mf02/jaq/issues/476)).
 - jaq `from_entries` reads only `key`/`value`; entries using `name`, `Name`, `Key` or `Value` become a `null` key. Now documented as an incompatibility ([#478](https://github.com/01mf02/jaq/issues/478)).
 - gojq `isnan` errors on non-numbers where jq returns `false`. gojq had chosen this on purpose and changed it to match jq ([#327](https://github.com/itchyny/gojq/issues/327)).
+
+**Already documented** (reported, then found in jaq's README; not counted as new): jaq aborts with a stack overflow (exit 134) on deeply nested values: printing, `tojson`, JSON input and `fromjson` from a few thousand levels; jq and gojq print or stop with an error at 10000. jaq's README already listed this in its "Security" section ([#477](https://github.com/01mf02/jaq/issues/477)). Related: jaq #454, #467.
 
 **Fixed upstream:** gojq `abs` on non-numbers (fixed on `main`, unreleased).
 

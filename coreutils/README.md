@@ -20,7 +20,7 @@ Parity = mean per-feature match rate (exit status, stdout, stderr), truncated to
 - `fmt -p PREFIX` adds a newline to an unprefixed last line that has none (GNU copies it unchanged). `printf x | fmt -p '#'` → GNU `x`, uutils `x\n`. Fixed upstream ([#15553](https://github.com/uutils/coreutils/issues/15553)).
 - `od -w1K` accepted (GNU rejects the suffix); `nl -l 18446744073709551616` rejected (GNU accepts). Fixed upstream ([#15551](https://github.com/uutils/coreutils/issues/15551)).
 - busybox `od -c -x` (output types of different sizes) prints the zero padding of the last block as if it were input. Related code path: busybox bug 13246. Not reported (busybox takes reports on its mailing list).
-- toybox `fmt`: `printf 'a\001b\n' | toybox fmt` writes `\e[7m\e[27m` before the word. `utf8len()` emits the reverse-video escapes even when it only measures. Reported: [landley/toybox#615](https://github.com/landley/toybox/issues/615).
+- toybox `fmt`: `printf 'a\001b\n' | toybox fmt` writes `\e[7m\e[27m` before the word. `utf8len()` emits the reverse-video escapes even when it only measures. Reported as [landley/toybox#615](https://github.com/landley/toybox/issues/615); fixed in toybox's repository on 2026-10-22, not in a release yet (the GitHub issue is still open).
 
 **Fixed upstream** (found by earlier runs of the same setup): uutils `numfmt` scientific notation in unselected fields (#15312), `od -B` (#15313), `od -S` past end of input (#15314).
 
