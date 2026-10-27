@@ -27,7 +27,7 @@ Every finding below was reproduced by hand outside the tool, then checked agains
 | jaq | `from_entries` ignores `name`/`Name`/`Key`/`Value` | documented by jaq as an incompatibility ([#478](https://github.com/01mf02/jaq/issues/478)) |
 | gojq | `isnan` errors on non-numbers (jq returns `false`) | changed to match jq ([#327](https://github.com/itchyny/gojq/issues/327); gojq had chosen this on purpose) |
 
-That's 11 new differences: 9 fixed or changed on the projects' main branches (only jaq's in a release so far), 1 documented, 1 not reported yet. Not counted: jaq's stack-overflow abort on deeply nested values, reported as [#477](https://github.com/01mf02/jaq/issues/477) but already documented in jaq's README ("Security"), and gojq's `abs` on non-numbers, already fixed on gojq's `main` before these runs. Already tracked upstream (not counted): see the per-directory READMEs.
+That's 11 new differences: 9 fixed or changed on the projects' main branches (only jaq's in a release so far), 1 documented, 1 not reported. Not counted: jaq's stack-overflow abort on deeply nested values, reported as [#477](https://github.com/01mf02/jaq/issues/477) but already documented in jaq's README ("Security"), and gojq's `abs` on non-numbers, already fixed on gojq's `main` before these runs. Already tracked upstream (not counted): see the per-directory READMEs.
 
 ## Method and caveats
 

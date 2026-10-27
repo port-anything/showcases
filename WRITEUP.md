@@ -48,7 +48,7 @@ Then it does the work that turns a pile of diffs into something a maintainer can
 | uutils | `numfmt` keeps a tab between fields; GNU writes a space: `printf '1\t2\n' \| numfmt` | fixed ([#15552](https://github.com/uutils/coreutils/issues/15552)) |
 | uutils | `fmt -p PREFIX` adds a newline to an unprefixed last line that has none: `printf x \| fmt -p '#'` | fixed ([#15553](https://github.com/uutils/coreutils/issues/15553)) |
 | uutils | `od -w1K` accepted (GNU rejects the suffix); `nl -l 18446744073709551616` rejected (GNU accepts) | fixed ([#15551](https://github.com/uutils/coreutils/issues/15551)) |
-| busybox | `od` with output types of different sizes prints the last block's zero padding as input: `printf abc \| busybox od -c -x` shows `a b c \0` | not reported yet |
+| busybox | `od` with output types of different sizes prints the last block's zero padding as input: `printf abc \| busybox od -c -x` shows `a b c \0` | not reported |
 | toybox | `fmt` writes `\e[7m\e[27m` into its output for every word with a control byte or invalid UTF-8: `printf 'a\001b\n' \| toybox fmt` | fixed in toybox's repository, not in a release yet ([#615](https://github.com/landley/toybox/issues/615) is still open: toybox works mostly outside GitHub) |
 | jaq | panics (exit 101) instead of a syntax error when a filter ends inside a comment with a bracket open: `jaq -n '(#'` | fixed, released in jaq 3.1.2 ([#476](https://github.com/01mf02/jaq/issues/476)) |
 | jaq | `from_entries` reads only `key`/`value`; `name`, `Name`, `Key` and `Value` silently become a `null` key | documented as an incompatibility ([#478](https://github.com/01mf02/jaq/issues/478)) |
